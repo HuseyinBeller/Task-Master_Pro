@@ -12,7 +12,7 @@ pipeline {
             )
       }
     }
-    stage('Git Checkout') {
+    stage('Unit Test Maven') {
       steps {
           script {
               mvnTest()
