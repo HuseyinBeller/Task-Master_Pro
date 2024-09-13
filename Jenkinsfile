@@ -1,25 +1,23 @@
 @Library('my-shared-library') _
 
-pipeline {
+pipeline{
   agent any
 
-  stages {
+  stages{
+    stage('Git Checkout') {
+      steps {
+          gitCheckout(
+              branch: "main",
+              url: "https://github.com/HuseyinBeller/Task-Master_Pro.git"
+            )
+      }
+    }
     stage('Git Checkout') {
       steps {
           script {
-          gitCheckout(
-            branch: 'main',
-            url: 'https://github.com/HuseyinBeller/Task-Master_Pro.git'
-          )
+              mvnTest()
           }
       }
-
-    stage('Unit Test Maven') {
-      steps {
-          script {
-            mvnTest()
-          }
-      }
-    }
     }
   }
+
