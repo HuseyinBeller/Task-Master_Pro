@@ -1,14 +1,14 @@
 @Library('my-shared-library') _
 
-pipeline{
+pipeline {
   agent any
 
-  stages{
+  stages {
     stage('Git Checkout') {
       steps {
           gitCheckout(
-              branch: "main",
-              url: "https://github.com/HuseyinBeller/Task-Master_Pro.git"
+              branch: 'main',
+              url: 'https://github.com/HuseyinBeller/Task-Master_Pro.git'
             )
       }
     }
@@ -20,4 +20,5 @@ pipeline{
       }
     }
   }
+}
 
