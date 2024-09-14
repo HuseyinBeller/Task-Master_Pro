@@ -78,7 +78,7 @@ pipeline {
         when { expression {  params.action == 'create' } }
       steps {
           script {
-            nexusRepoUpload(
+            nexusUtils.uploadToNexus(
                 nexusUrl: '3.126.121.180:8081',
                 nexusVersion: 'NEXUS3',
                 protocol: 'http'
