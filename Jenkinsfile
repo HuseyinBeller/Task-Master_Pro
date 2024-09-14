@@ -81,7 +81,7 @@ pipeline {
             nexusUtils.uploadToNexus(
                 nexusUrl: '3.126.121.180:8081',
                 nexusVersion: 'NEXUS3',
-                protocol: 'http'
+                protocol: 'http',
                 repository: 'demoapp-release',
                 credentialsId: 'nexus-auth',
                 groupId: 'com.example.todo',
