@@ -69,12 +69,14 @@ pipeline {
         when { expression {  params.action == 'create' } }
       steps {
           script {
-            nexusRepoUpload(
-
+            nexusArtifactUploader artifacts:
+            [
+              [
                 artifactId: 'todo-app',
                 classifier: '', file: 'target/todo-app-1.0.0.jar',
-                type: 'jar',
-
+                type: 'jar'
+                ]
+            ],
             credentialsId: 'nexus-auth',
             groupId: 'com.example.todo',
             nexusUrl: '3.126.121.180:8081',
@@ -82,7 +84,6 @@ pipeline {
             protocol: 'http',
             repository: 'demoapp-release',
             version: '1.0.0'
-            )
           }
       }
     }
