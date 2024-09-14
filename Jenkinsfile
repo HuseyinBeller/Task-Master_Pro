@@ -87,8 +87,8 @@ pipeline {
                 groupId: 'com.example.todo',
                 artifactId: 'todo-app',
                 version: '1.0.0',
-                file: 'target/todo-app.jar'
-                type: 'jar'
+                file: 'target/todo-app.jar',
+                type: 'jar',
             )
           }
       }
