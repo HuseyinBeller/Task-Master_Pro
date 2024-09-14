@@ -70,7 +70,6 @@ pipeline {
       steps {
           script {
             nexusRepoUpload(
-            nexusArtifactUploader artifacts:
             [
               [
                 artifactId: 'todo-app',
