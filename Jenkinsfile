@@ -81,14 +81,13 @@ pipeline {
             nexusRepoUpload(
                 nexusUrl: '3.126.121.180:8081',
                 nexusVersion: 'nexus3',
-                protocol: 'http'            // Your Nexus URL (without http/https)
-                repository: 'demoapp-release',                   // Nexus repository
-                credentialsId: 'nexus-auth',    // Jenkins credentials ID
-                groupId: 'com.example.todo',             // Maven Group ID
-                artifactId: 'todo-app',                // Artifact ID
-                version: '1.0.0',                        // Artifact version
-                packaging: 'jar',                         // Packaging type (e.g., jar, zip)
-                file: 'target/todo-app.jar'  // Path to the artifact to upload
+                protocol: 'http'
+                repository: 'demoapp-release',
+                credentialsId: 'nexus-auth',
+                groupId: 'com.example.todo',
+                artifactId: 'todo-app',
+                version: '1.0.0',
+                file: 'target/todo-app.jar'
                 type: 'jar'
             )
           }
