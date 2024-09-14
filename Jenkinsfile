@@ -71,7 +71,7 @@ pipeline {
           script {
             nexusRepoUpload(
                 nexusUrl: '3.126.121.180:8081',
-                nexusVersion: 'NEXUS3',
+                nexusVersion: 'nexus3',
                 protocol: 'http',
                 repository: 'demoapp-release',
                 credentialsId: 'nexus-auth',
@@ -80,6 +80,7 @@ pipeline {
                 version: '1.0.0',
                 file: 'target/todo-app.jar',
                 type: 'jar',
+                classifier: ''
             )
           }
       }
