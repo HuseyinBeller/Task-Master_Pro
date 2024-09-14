@@ -69,8 +69,8 @@ pipeline {
         when { expression {  params.action == 'create' } }
       steps {
           script {
-            nexusUtils.uploadToNexus(
-            // nexusArtifactUploader artifacts:
+            nexusRepoUpload(
+            nexusArtifactUploader artifacts:
             [
               [
                 artifactId: 'todo-app',
