@@ -69,7 +69,7 @@ pipeline {
         when { expression {  params.action == 'create' } }
       steps {
           script {
-            nexusRepoUpload(
+            nexusUtils.uploadToNexus(
             // nexusArtifactUploader artifacts:
             [
               [
