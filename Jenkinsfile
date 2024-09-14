@@ -85,14 +85,9 @@ pipeline {
                 repository: 'demoapp-release',
                 credentialsId: 'nexus-auth',
                 groupId: 'com.example.todo',
-                arttifacts: [
-                  [
-                    artifactId: 'todo-app',
-                    type: 'jar'
-                    file: 'target/todo-app.jar'
-                  ]
-                ]
+                artifactId: 'todo-app',
                 version: '1.0.0',
+                file: 'target/todo-app.jar'
                 type: 'jar'
             )
           }
