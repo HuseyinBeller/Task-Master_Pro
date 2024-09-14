@@ -115,12 +115,13 @@ pipeline {
       }
     }
 
-    stage('Docker Image Cleanup : DockerHub '){
+    stage('Docker Image Cleanup: DockerHub') {
         when { expression {  params.action == 'create' } }
-      steps{
-          script{
-              dockerImageCleanup("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
+      steps {
+          script {
+              dockerImageCleanup("${params.ImageName}", "${params.ImageTag}", "${params.DockerHubUser}")
           }
       }
     }
   }
+}
