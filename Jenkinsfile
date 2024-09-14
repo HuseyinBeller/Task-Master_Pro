@@ -75,6 +75,7 @@ pipeline {
     }
 
     stage('Nexus') {
+        when { expression {  params.action == 'create' } }
       steps {
           script {
             nexusRepoUpload(
