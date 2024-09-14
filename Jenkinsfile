@@ -69,6 +69,7 @@ pipeline {
         when { expression {  params.action == 'create' } }
       steps {
           script {
+            nexusRepoUpload(
             nexusArtifactUploader artifacts:
             [
               [
@@ -84,6 +85,7 @@ pipeline {
             protocol: 'http',
             repository: 'demoapp-release',
             version: '1.0.0'
+            )
           }
       }
     }
