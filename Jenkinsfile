@@ -80,7 +80,7 @@ pipeline {
           script {
             nexusRepoUpload(
                 nexusUrl: '3.126.121.180:8081',
-                nexusVersion: 'nexus3',
+                nexusVersion: 'NEXUS3',
                 protocol: 'http'
                 repository: 'demoapp-release',
                 credentialsId: 'nexus-auth',
