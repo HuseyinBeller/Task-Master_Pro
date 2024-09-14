@@ -73,7 +73,7 @@ pipeline {
             [
               [
                 artifactId: 'todo-app',
-                classifier: '', file: 'target/todo-app.jar',
+                classifier: '', file: 'target/todo-app-1.0.0.jar',
                 type: 'jar'
                 ]
             ],
