@@ -70,13 +70,11 @@ pipeline {
       steps {
           script {
             nexusRepoUpload(
-            [
-              [
+
                 artifactId: 'todo-app',
                 classifier: '', file: 'target/todo-app-1.0.0.jar',
-                type: 'jar'
-                ]
-            ],
+                type: 'jar',
+
             credentialsId: 'nexus-auth',
             groupId: 'com.example.todo',
             nexusUrl: '3.126.121.180:8081',
