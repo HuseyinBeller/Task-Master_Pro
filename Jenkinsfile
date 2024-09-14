@@ -78,7 +78,7 @@ pipeline {
         when { expression {  params.action == 'create' } }
       steps {
           script {
-            nexusRepoUpload(
+            nexusRepoUpload([
                 nexusUrl: '3.126.121.180:8081',
                 nexusVersion: 'nexus3',
                 protocol: 'http'
@@ -89,6 +89,7 @@ pipeline {
                 version: '1.0.0',
                 file: 'target/todo-app.jar'
                 type: 'jar'
+            ]
             )
           }
       }
